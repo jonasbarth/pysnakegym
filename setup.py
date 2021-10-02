@@ -9,11 +9,11 @@ with codecs.open(os.path.join(here, "README.md"), encoding="utf-8") as fh:
 
 VERSION = '0.0.1'
 DESCRIPTION = 'The Snake Game'
-LONG_DESCRIPTION = 'A package that allows you to play the game of snake.'
+LONG_DESCRIPTION = 'A package that allows you to play the classic game of snake.'
 
 # Setting up
 setup(
-    name="snake-game",
+    name="pysnakegame",
     version=VERSION,
     author="Jonas Barth",
     author_email="jonas.barth.95@gmail.com",
@@ -24,7 +24,7 @@ setup(
     install_requires=['numpy', 'pygame==1.9.6', 'pytest'],
     keywords=['python', 'snake', 'game', 'video game'],
     classifiers=[
-        "Development Status :: 2 - Releasing",
+        "Development Status :: 2 - Pre-Alpha",
         "Intended Audience :: Developers",
         "Programming Language :: Python :: 3.6",
         "Operating System :: Unix",
