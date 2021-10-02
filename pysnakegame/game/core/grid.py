@@ -2,7 +2,7 @@ import math
 
 import numpy as np
 
-from environment.env import Direction
+from pysnakegame.game.core.direction import Direction
 
 
 class Food(object):

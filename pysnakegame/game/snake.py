@@ -1,10 +1,10 @@
 import numpy as np
 import pygame
 
-from environment.env import Direction
-from environment.point import Point
-from game import colour
-from game.core.grid import Grid
+from pysnakegame.game.core.direction import Direction
+from pysnakegame.game.core.point import Point
+from pysnakegame.game import colour
+from pysnakegame.game.core.grid import Grid
 
 
 class SnakeGame(object):
