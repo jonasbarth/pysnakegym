@@ -1,10 +1,10 @@
 import pytest
 import numpy as np
 
-from pysnakegame.game.core.direction import Direction
-from pysnakegame.game.core.grid import Food
-from pysnakegame.game.core.grid import Snake
-from pysnakegame.game.core.grid import Grid
+from pysnakegym.game.core.direction import Direction
+from pysnakegym.game.core.grid import Food
+from pysnakegym.game.core.grid import Snake
+from pysnakegym.game.core.grid import Grid
 
 @pytest.fixture
 def food():
