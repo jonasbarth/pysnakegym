@@ -18,7 +18,7 @@ effectiveness of using evolutionary algorithms.
 Since we need the inputs to our neural network to be numbers, the boolean values `true` and
 `false` are represented by `1` and `0` respectively.
 
-<img src="docs/img/full_state_example.jpg" width="400" height="400"/>
+<img src="img/full_state_example.jpg" width="400" height="400"/>
 
 # 2. Immediate Danger
 The immediate danger is a 1D vector of 3 booleans which tells the snake whether there is any 
@@ -35,7 +35,7 @@ Here are some example vectors:
 [1, 1, 1] -> danger to the left, straight ahead, and to the right
 ```
 
-<img src="docs/img/danger_example.jpg" width="400" height="400"/>
+<img src="img/danger_example.jpg" width="400" height="400"/>
 
 # 3. Absolute Direction
 The absolute direction is a 1D vector of 4 booleans which tells the snake whether it is currently
@@ -50,7 +50,7 @@ possibilities:
 [0, 0, 0, 1] -> direction is right
 ```
 
-<img src="docs/img/direction_example.jpg" width="400" height="400"/>
+<img src="img/direction_example.jpg" width="400" height="400"/>
 
 # 4. Food Location
 The location of the food is a 1D vector of 4 booleans which tells the snake the direction of the 
@@ -67,5 +67,5 @@ Example values for the vector are:
 [0, 1, 0, 1] -> the food is down to the right of the snake's head
 ```
 
-<img src="docs/img/food_example.jpg" width="400" height="400"/>
+<img src="img/food_example.jpg" width="400" height="400"/>
 
