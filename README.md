@@ -42,10 +42,10 @@ The `step` method of the `mdp` takes an action and returns a triplet consisting 
   was taken. Depending on the state representation the shape and size will vary.
   
 
-* `reward` (float): the reward observed after the step has been taken.
+* `reward` **(float)**: the reward observed after the step has been taken.
   
 
-* `done` (bool): whether the game is finished or not. Returns `true` if `state` is a 
+* `done` **(bool)**: whether the game is finished or not. Returns `true` if `state` is a 
 final state, `false` if it is not.
   
 The `step` method is a representation of the `agent-environment` interaction that
@@ -75,3 +75,4 @@ food is relative to the snake's head.
 There are a number of state representations available to choose from:
 
 * [boolean state representation](pysnakegym/docs/boolean_state_representation.md) 
+* [grid state representation](pysnakegym/docs/grid_state_representation.md)
