@@ -1,15 +1,15 @@
 import pytest
 
 from pysnakegym.game import SnakeGame
-from pysnakegym.mdp.state import SnakeState3
+from pysnakegym.mdp.state import BooleanState, GridState
 
 import numpy as np
 
 @pytest.fixture
-def snake_state_3():
+def boolean_state():
     game = SnakeGame(200, 200, 20)
 
-    state = SnakeState3(game)
+    state = BooleanState(game)
     return state
 
 @pytest.fixture
@@ -21,5 +21,16 @@ def snake_body():
     return np.array([[5, 5]])
 
 
-def test_get_danger(snake_state_3, vicinity, snake_body):
-    assert(snake_state_3.get_danger(vicinity, snake_body) == np.array([0, 0, 0])).all()
+def test_get_danger(boolean_state, vicinity, snake_body):
+    assert(boolean_state.get_danger(vicinity, snake_body) == np.array([0, 0, 0])).all()
+
+
+@pytest.fixture
+def grid_state():
+    game = SnakeGame(200, 200, 20)
+
+    state = GridState(game)
+    return state
+
+def test(grid_state):
+    print(grid_state.get_state())
