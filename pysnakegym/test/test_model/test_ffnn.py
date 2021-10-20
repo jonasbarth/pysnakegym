@@ -6,7 +6,7 @@ from pysnakegym.model.ffnn import FFNN
 
 @pytest.fixture
 def one_hidden_layer():
-    return FFNN([(3, 2), (2, 4), (4, 1)])
+    return FFNN([3, 2, 4, 1])
 
 def test_ffnn_structure(one_hidden_layer):
     assert(len(one_hidden_layer.layers()) == 3)

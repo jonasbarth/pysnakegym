@@ -9,8 +9,11 @@ class FFNN(nn.Module):
 
     def __init__(self, features: List):
         super().__init__()
-
-        self._layers = [nn.Linear(feature[0], feature[1]) for feature in features]
+        # the feature list will be [input, hidden..., output]
+        nodes = []
+        for i in range(len(features) - 1):
+            nodes.append((features[i], features[i + 1]))
+        self._layers = [nn.Linear(feature[0], feature[1]) for feature in nodes]
         self.input_layer = self._layers[0]
         self.output_layer = self._layers[-1]
         self.hidden_layers = self._layers[1:-1]
