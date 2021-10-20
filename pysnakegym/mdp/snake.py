@@ -1,5 +1,5 @@
 import numpy as np
-from pysnakegym.mdp.state import SnakeState3
+from pysnakegym.mdp.state import BooleanState
 from pysnakegym.game.snake import PyGameSnakeGame
 from pysnakegym.game.snake import SnakeGame
 from pysnakegym.mdp.mdp import MDP
@@ -7,13 +7,13 @@ from pysnakegym.mdp.mdp import MDP
 
 class SnakeMDP(MDP):
 
-    def __init__(self, show_game: bool):
+    def __init__(self, screen_width: int = 200, screen_height: int = 200, snake_size: int = 20, show_game: bool = False):
         super().__init__()
         if show_game:
-            self.environment = PyGameSnakeGame(screen_width=400, screen_height=400, snake_size=20)
+            self.environment = PyGameSnakeGame(screen_width=screen_width, screen_height=screen_height, snake_size=snake_size)
         else:
-            self.environment = SnakeGame(screen_width=200, screen_height=200, snake_size=20)
-        self.state_representation = SnakeState3(self.environment)
+            self.environment = SnakeGame(screen_width=screen_width, screen_height=screen_height, snake_size=snake_size)
+        self.state_representation = BooleanState(self.environment)
 
     def reset(self) -> (np.array, float, bool):
         self.environment.start()
