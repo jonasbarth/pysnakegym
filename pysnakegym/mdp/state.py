@@ -40,11 +40,11 @@ class GridState(SnakeState):
 
         snake_head_x, snake_head_y = int(self.game.snake_head().x), int(self.game.snake_head().y)
         snake_body = self.game.snake_position()
-        food_x, food_y = self.game.food_position().x, self.game.food_position().y
+        food_x, food_y = int(self.game.food_position().x), int(self.game.food_position().y)
 
         for segment in snake_body[1:]:
-            x = segment[0]
-            y = segment[1]
+            x = int(segment[0])
+            y = int(segment[1])
             grid[y][x] = 191
 
         grid[snake_head_y][snake_head_x] = 255
