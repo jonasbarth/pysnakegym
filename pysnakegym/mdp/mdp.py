@@ -1,5 +1,8 @@
 import numpy as np
 
+from pysnakegym.mdp.state import BooleanState, GridState
+
+
 class MDPAction(object):
 
     def __init__(self, action: int):
@@ -16,6 +19,7 @@ class MDP(object):
 
     def __init__(self):
         self.environment = None
+        self.state_representation = None
         self._reward_sum = 0
         self._n_steps = 0
         self._score = 0
@@ -71,3 +75,13 @@ class MDP(object):
         :return: an int
         """
         pass
+
+    def set_state_representation(self, state_representation: str) -> None:
+        """
+        Sets the state representation that will be used by the MDP. Possible values are 'BOOLEAN' and 'GRID'.
+        """
+        if state_representation == 'BOOLEAN':
+            self.state_representation = BooleanState(self.environment)
+        elif state_representation == 'GRID':
+            self.state_representation = GridState(self.environment)
+
