@@ -11,10 +11,12 @@ pip install pysnakegym
 ```
 
 # 3. How to use
-Below is an example of how to use the gym. The interface is an `MDP` object representing
-a Markov Decision Process (MDP) of the game of snake.
+Below is an example of how to use the gym. To interface with the game of snake, the `SnakeMDP` object representing
+a Markov Decision Process (MDP) is used.
 ```python
-from pysnakegym.mdp import mdp
+from pysnakegym.mdp import SnakeMDP
+
+mdp = SnakeMDP()
 
 state, reward, done = mdp.reset()
 
