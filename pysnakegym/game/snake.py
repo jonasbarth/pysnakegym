@@ -1,3 +1,5 @@
+import copy
+
 import numpy as np
 import pygame
 
@@ -5,6 +7,7 @@ from pysnakegym.game.core.direction import Direction
 from pysnakegym.game.core.point import Point
 from pysnakegym.game import colour
 from pysnakegym.game.core.grid import Grid
+from pysnakegym.game.sequence import GameSequence, SnakeGameSequence
 
 
 class SnakeGame(object):
@@ -205,6 +208,13 @@ class SnakeGame(object):
         :return: A numpy array that is the grid of the game.
         """
         return self.grid.grid.copy()
+
+    def get_sequence(self) -> GameSequence:
+        """
+        Gets a sequence of the game which can be used to replay the game.
+        :return: A GameSequence object containing the Snake and Food.
+        """
+        return SnakeGameSequence(copy.deepcopy(self.grid.snake()), copy.deepcopy(self.grid.food()))
 
 
 class PyGameSnakeGame(SnakeGame):
