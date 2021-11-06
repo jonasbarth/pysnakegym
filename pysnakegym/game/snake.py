@@ -223,27 +223,27 @@ class PyGameSnakeGame(SnakeGame):
         self.window = pygame.display.set_mode((self.screen_width, self.screen_height))
         # 0,0 is in the top left corner
 
-        self.__draw_snake()
-        self.__draw_food()
-        self.__display_score()
+        self.draw_snake()
+        self.draw_food()
+        self.display_score()
 
     def move(self, direction: Direction) -> (Point, bool, bool):
 
         snake_head, ate_food, game_over = super().move(direction)
 
-        self.__draw_snake()
-        self.__draw_food()
-        self.__display_score()
+        self.draw_snake()
+        self.draw_food()
+        self.display_score()
         self.clock.tick(40)
         return snake_head, ate_food, game_over
 
-    def __draw_food(self):
+    def draw_food(self):
         food_coords = Grid.scale(self.grid.food().position(), self.snake_size)
         food_rect = pygame.Rect(food_coords[0], food_coords[1], self.snake_size, self.snake_size)
         pygame.draw.rect(self.window, colour.green, food_rect)
         pygame.display.flip()
 
-    def __draw_snake(self):
+    def draw_snake(self):
         self.window.fill(colour.black)
         snake_segments = self.grid.snake().position()
         index = 0
@@ -259,7 +259,7 @@ class PyGameSnakeGame(SnakeGame):
             pygame.draw.rect(self.window, segment_colour, rect)
             pygame.display.flip()
 
-    def __display_score(self):
+    def display_score(self):
         score_font = pygame.font.SysFont(None, 30)
         label = score_font.render(str(self.score()), 1, (255, 255, 255))
         self.window.blit(label, (1, 1))
