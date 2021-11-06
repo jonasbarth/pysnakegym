@@ -85,3 +85,9 @@ class MDP(object):
         elif state_representation == 'GRID':
             self.state_representation = GridState(self.environment)
 
+    def get_game_screen(self) -> np.array:
+        """
+        Gets the screen of the game.
+        """
+        pass
+

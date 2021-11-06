@@ -199,12 +199,19 @@ class SnakeGame(object):
         """
         return self._n_steps_without_food
 
+    def get_grid(self) -> np.array:
+        """
+        Gets the grid which represents the current state of the game.
+        :return: A numpy array that is the grid of the game.
+        """
+        return self.grid.grid.copy()
 
 
 class PyGameSnakeGame(SnakeGame):
     """
     Subclass of SnakeGame where the game is visible on the screen.
     """
+
     def __init__(self, screen_width: int, screen_height: int, snake_size: int):
         super().__init__(screen_width, screen_height, snake_size)
         pygame.init()
@@ -230,7 +237,6 @@ class PyGameSnakeGame(SnakeGame):
         self.clock.tick(40)
         return snake_head, ate_food, game_over
 
-
     def __draw_food(self):
         food_coords = Grid.scale(self.grid.food().position(), self.snake_size)
         food_rect = pygame.Rect(food_coords[0], food_coords[1], self.snake_size, self.snake_size)
@@ -252,7 +258,6 @@ class PyGameSnakeGame(SnakeGame):
             rect = pygame.Rect(segment[0], segment[1], self.snake_size, self.snake_size)
             pygame.draw.rect(self.window, segment_colour, rect)
             pygame.display.flip()
-
 
     def __display_score(self):
         score_font = pygame.font.SysFont(None, 30)
